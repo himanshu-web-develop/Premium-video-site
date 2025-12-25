@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard | Premium Video</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+<script src="firebase-config.js"></script>
+</head>
+<body>
+
+<header>
+  <h2>🎬 Premium Video Dashboard</h2>
+  <div id="topBar"></div>
+</header>
+
+<div id="videoList"></div>
+
+<!-- Upload Modal -->
+<div class="modal" id="uploadModal">
+  <div class="modal-content">
+    <h3>Upload Video</h3>
+    <input id="vTitle" placeholder="Video Title">
+    <input id="vPrice" type="number" placeholder="Price (0 = Free)">
+    <input id="vPlaylist" placeholder="Playlist Name">
+    <input id="vFile" type="file" accept="video/*">
+    <button onclick="uploadVideo()">Upload</button>
+  </div>
+</div>
+
+<!-- Payment Modal -->
+<div class="modal" id="payModal">
+  <div class="modal-content">
+    <h3>Scan & Pay</h3>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi://pay?pa=7985286201@upi&pn=PremiumVideo">
+    <p><b>UPI:</b> 7985286201</p>
+    <input id="utrInput" placeholder="Enter UTR Number">
+    <button onclick="confirmPayment()">Payment Done</button>
+  </div>
+</div>
+
+<!-- WhatsApp small icon -->
+<a class="whatsapp" href="https://chat.whatsapp.com/BlqaRUYyxlC7jJuoARYZse" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
